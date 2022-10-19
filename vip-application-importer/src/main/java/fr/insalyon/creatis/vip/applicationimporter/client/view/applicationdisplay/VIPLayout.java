@@ -55,6 +55,7 @@ public class VIPLayout extends AbstractFormLayout {
     private final CheckboxItem overwriteIfexists;
     private final SelectItem appCbItem;
     private final SelectItem tagsCbItem;
+    private final SelectItem executionTypeItem;
 
     public VIPLayout(String width, String height) {
         super(width, height);
@@ -83,10 +84,21 @@ public class VIPLayout extends AbstractFormLayout {
 
         tagsCbItem = createTagsSelect();
 
+        //select list to choose the execution type
+        executionTypeItem = new SelectItem();
+        executionTypeItem.setTitle("<br>Select execution type</b>");
+        executionTypeItem.setType("comboBox");
+        LinkedHashMap<String, String> executionTypeValueMap = new LinkedHashMap<>();
+        executionTypeValueMap.put(Constants.APP_EXECUTION_LOCAL, "Local");
+        executionTypeValueMap.put(Constants.APP_EXECUTION_CLOUD, "Cloud");
+        executionTypeItem.setValueMap(executionTypeValueMap);
+
         this.addMember(FieldUtil.getForm(appCbItem));
         this.addMember(FieldUtil.getForm(isRunOnGrid));
         this.addMember(FieldUtil.getForm(overwriteIfexists));
         this.addMember(FieldUtil.getForm(tagsCbItem));
+        this.addMember(FieldUtil.getForm(executionTypeItem));
+
     }
 
     public void setApplicationLocationValue(){
@@ -176,5 +188,9 @@ public class VIPLayout extends AbstractFormLayout {
 
     public String getTag() {
         return tagsCbItem._getValue().toString();
+    }
+
+    public String getExecutionType(){
+        return executionTypeItem._getValue().toString();
     }
 }

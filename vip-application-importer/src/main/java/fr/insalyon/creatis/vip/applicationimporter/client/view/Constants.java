@@ -78,4 +78,9 @@ public class Constants {
     public static final String APP_IMPORTER_STANDALONE_TYPE = "app-importer-standalone-type";
     public static final String APP_IMPORTER_DOT_INPUTS_TYPE = "app-importer-dot-inputs-type";
 
+    //Execution type
+    public static final String APP_EXECUTION_LOCAL = "file";
+    public static final String APP_EXECUTION_CLOUD = "lfn";
+
+
 }

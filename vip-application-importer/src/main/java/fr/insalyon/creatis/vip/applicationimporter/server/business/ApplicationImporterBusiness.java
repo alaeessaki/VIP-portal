@@ -104,7 +104,7 @@ public class ApplicationImporterBusiness {
     }
 
     public void createApplication(
-            BoutiquesApplication bt, String type, String tag, boolean isRunOnGrid, boolean overwriteApplicationVersion, User user)
+            BoutiquesApplication bt, String type, String tag, boolean isRunOnGrid, boolean overwriteApplicationVersion, String executionType, User user)
             throws BusinessException {
 
         try {
