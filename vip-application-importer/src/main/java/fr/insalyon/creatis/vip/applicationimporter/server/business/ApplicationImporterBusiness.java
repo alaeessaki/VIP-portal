@@ -128,7 +128,7 @@ public class ApplicationImporterBusiness {
 
             // Generate strings
             String gwendiaString = velocityUtils.createDocument(bt, gwendiaTemplate);
-            String gaswString = velocityUtils.createDocument(tag, bt, isRunOnGrid, gaswTemplate);
+            String gaswString = velocityUtils.createDocument(tag, bt, isRunOnGrid, executionType, gaswTemplate);
             String wrapperString = velocityUtils.createDocument(tag, bt, isRunOnGrid, wrapperTemplate);
 
             // Write files
