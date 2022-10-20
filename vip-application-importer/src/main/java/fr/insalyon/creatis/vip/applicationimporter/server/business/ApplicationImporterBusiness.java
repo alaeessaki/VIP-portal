@@ -127,7 +127,7 @@ public class ApplicationImporterBusiness {
                     user, bt.getApplicationLFN()).concat("/").concat(bt.getToolVersion().replaceAll("\\s+","")));
 
             // Generate strings
-            String gwendiaString = velocityUtils.createDocument(bt, gwendiaTemplate);
+            String gwendiaString = velocityUtils.createDocument(bt, executionType, gwendiaTemplate);
             String gaswString = velocityUtils.createDocument(tag, bt, isRunOnGrid, executionType, gaswTemplate);
             String wrapperString = velocityUtils.createDocument(tag, bt, isRunOnGrid, wrapperTemplate);
 
